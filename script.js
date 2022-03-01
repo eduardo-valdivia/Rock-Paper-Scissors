@@ -1,22 +1,22 @@
-let playerScore = 0;
-let computerScore = 0;
-startGame();
+let playerScore = 0; //initializing the variable to keep player score
+let computerScore = 0; // initializing the variable to keep computer score
+startGame(); //Calling the startGame function to begin the selection process
 
 function startGame() {
-    let playerSelection = window.prompt ("Enter your selection: ");
-    playerSelection = playerSelection.toLowerCase();
-    let computerSelection = computerPlay();
-    let msg = playRound(computerSelection, playerSelection);
-    console.log(msg);
-    if (playerScore <= 4 && computerScore <= 4) {
-        console.log("Current Score : Player - " + playerScore + ", Computer - " + computerScore);
-        setTimeout(startGame, 0);
+    let playerSelection = window.prompt ("Enter your selection: "); //Asking user for selection
+    playerSelection = playerSelection.toLowerCase(); //converting selection to all lower case
+    let computerSelection = computerPlay(); //initializing computer selection and also calling the complay play function
+    let msg = playRound(computerSelection, playerSelection); //initializing msg and also calling play round function and passing two arguments
+    console.log(msg); //After playround is ran, displaying what happened in the round
+    if (playerScore <= 4 && computerScore <= 4) { //if player score and computer score are less then 5, keep playing!
+        console.log("Current Score : Player - " + playerScore + ", Computer - " + computerScore); //display current score
+        setTimeout(startGame, 0); //calling startGame to start next round
     } else {
-        winCondition();
+        winCondition(); //call win condition function to annouce winner
     }
 }
 
-function computerPlay () {
+function computerPlay () { //function that randomly chooses selection for computer
     const random = Math.floor(Math.random() * 3);
     if (random === 0) {
         return 'rock';
@@ -27,7 +27,7 @@ function computerPlay () {
     }
 }
 
-function playRound (computer, player) {
+function playRound (computer, player) { //function that checks whether player or computer, won lost or drew the game. Also Adds points to score depending on outcome, and returns message
     let comWin = "You lose " + computer + " beats " + player;
     let playWin = "You win " + player + " beats " + computer;
     let tie = "You tied";
@@ -59,7 +59,7 @@ function playRound (computer, player) {
     }
 }
 
-function winCondition() {
+function winCondition() { //function that gets called once computer or player reachs 5 wins,annonces winner
     console.log("Final Score : Player - " + playerScore + ", Computer - " + computerScore);
     if (playerScore >= 5){
         console.log("Player wins!");
