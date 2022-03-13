@@ -1,8 +1,36 @@
 let playerScore = 0; //initializing variables to keep scores
 let computerScore = 0; 
-startGame(); //Calling fucntion to start game
 
-function startGame() {
+let computerSelection = computerPlay();
+console.log(computerSelection);
+let playerSelection;
+let msg;
+
+const btnRock = document.querySelector('.btn-rock');
+btnRock.addEventListener('click', () => {
+    playerSelection = 'rock';
+    msg = playRound(computerSelection, playerSelection);
+    console.log(msg);
+});
+
+const btnPaper = document.querySelector('.btn-paper');
+btnPaper.addEventListener('click', () => {
+    playerSelection = 'paper';
+    msg = playRound(computerSelection, playerSelection);
+    console.log(msg);
+});
+
+const btnScis = document.querySelector('.btn-scissors');
+btnScis.addEventListener('click', () => {
+    playerSelection = 'scissors';
+    msg = playRound(computerSelection, playerSelection);
+    console.log(msg);
+});
+
+//startGame(); //Calling fucntion to start game
+
+/*function startGame() {
+
     let playerSelection = window.prompt ("Enter your selection: "); //Asking user for selection
     playerSelection = playerSelection.toLowerCase(); //converting selection to all lower case
     let computerSelection = computerPlay(); //initializing computer selection and also calling the computerPlay function
@@ -14,7 +42,7 @@ function startGame() {
     } else {
         winCondition(); //call win condition function to annouce winner
     }
-}
+} */
 
 function computerPlay () { //function that randomly chooses selection for computer
     const random = Math.floor(Math.random() * 3);
@@ -59,7 +87,9 @@ function playRound (computer, player) { //function that checks whether player or
     }
 }
 
-function winCondition() { //function that gets called once computer or player reachs 5 wins,annonces winner
+
+
+/*function winCondition() { //function that gets called once computer or player reachs 5 wins,annonces winner
     console.log("Final Score : Player - " + playerScore + ", Computer - " + computerScore);
     if (playerScore >= 5){
         console.log("Player wins!");
@@ -67,4 +97,4 @@ function winCondition() { //function that gets called once computer or player re
     if (computerScore >= 5) {
         console.log("Computer wins!");
     }
-}
+} */
