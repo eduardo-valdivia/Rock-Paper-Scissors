@@ -1,48 +1,71 @@
 let playerScore = 0; //initializing variables to keep scores
 let computerScore = 0; 
 
-let computerSelection = computerPlay();
-console.log(computerSelection);
+let computerSelection;
 let playerSelection;
 let msg;
 
 const btnRock = document.querySelector('.btn-rock');
 btnRock.addEventListener('click', () => {
+    let x = document.getElementById('results');
+    results.innerHTML = 'Play-by-Play!';
+    let y = document.getElementById('score');
+    score.innerHTML = 'Score!';
     playerSelection = 'rock';
+    let computerSelection = computerPlay();
     msg = playRound(computerSelection, playerSelection);
-    console.log(msg);
+    displayResultsPerGame();
+    displayScore();
+    remove();
 });
 
 const btnPaper = document.querySelector('.btn-paper');
 btnPaper.addEventListener('click', () => {
+    let x = document.getElementById('results');
+    results.innerHTML = 'Play-by-Play!';
+    let y = document.getElementById('score');
+    score.innerHTML = 'Score!';
     playerSelection = 'paper';
+    let computerSelection = computerPlay();
     msg = playRound(computerSelection, playerSelection);
-    console.log(msg);
-});
+    displayResultsPerGame();
+    displayScore();
+    remove();
+    });
 
 const btnScis = document.querySelector('.btn-scissors');
 btnScis.addEventListener('click', () => {
+    let x = document.getElementById('results');
+    results.innerHTML = 'Play-by-Play!';
+    let y = document.getElementById('score');
+    score.innerHTML = 'Score!';
     playerSelection = 'scissors';
+    let computerSelection = computerPlay();
     msg = playRound(computerSelection, playerSelection);
-    console.log(msg);
+    displayResultsPerGame();
+    displayScore();
+    remove();
 });
 
-//startGame(); //Calling fucntion to start game
+function displayResultsPerGame() {
+    const results = document.querySelector('.results');
+    const displayResults = document.createElement('div');
+    displayResults.classList.add('displayResults');
+    displayResults.textContent = msg;
+    results.appendChild(displayResults);
+}
 
-/*function startGame() {
-
-    let playerSelection = window.prompt ("Enter your selection: "); //Asking user for selection
-    playerSelection = playerSelection.toLowerCase(); //converting selection to all lower case
-    let computerSelection = computerPlay(); //initializing computer selection and also calling the computerPlay function
-    let msg = playRound(computerSelection, playerSelection); //initializing msg and also calling play round function and passing two arguments
-    console.log(msg); //Display scores
-    if (playerScore <= 4 && computerScore <= 4) { //if player score and computer score are less then 5, keep playing!
-        console.log("Current Score : Player - " + playerScore + ", Computer - " + computerScore); //display current score
-        setTimeout(startGame, 0);
+function displayScore() {
+    const score = document.querySelector('.score');
+    const displayScores = document.createElement('div');
+    displayScores.classList.add('displayScores');
+    if (playerScore <= 4 && computerScore <= 4) {
+        displayScores.textContent = ("Current Score : Player - " + playerScore + ", Computer - " + computerScore);
     } else {
         winCondition(); //call win condition function to annouce winner
     }
-} */
+    score.appendChild(displayScores);
+}
 
 function computerPlay () { //function that randomly chooses selection for computer
     const random = Math.floor(Math.random() * 3);
@@ -68,7 +91,6 @@ function playRound (computer, player) { //function that checks whether player or
         playerScore++;
         return playWin;
     } else if (computer === 'paper' && player === 'paper') {
-        console.log("Tied scores stayed the same");
         return tie;
     } else if (computer === 'rock' && player === 'paper') {
         playerScore++;
@@ -87,14 +109,16 @@ function playRound (computer, player) { //function that checks whether player or
     }
 }
 
-
-
-/*function winCondition() { //function that gets called once computer or player reachs 5 wins,annonces winner
-    console.log("Final Score : Player - " + playerScore + ", Computer - " + computerScore);
+function winCondition() { //function that gets called once computer or player reachs 5 wins,annonces winner
+    const winner = document.querySelector('.winner');
+    const displayWinner = document.createElement('div');
+    displayWinner.classList.add('displayWinner');
+    
     if (playerScore >= 5){
-        console.log("Player wins!");
+        displayWinner.textContent = 'Player Wins!'
     } 
     if (computerScore >= 5) {
-        console.log("Computer wins!");
+        displayWinner.textContent = 'Computer Wins!'
     }
-} */
+    winner.appendChild(displayWinner);
+} 
