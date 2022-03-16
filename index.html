@@ -5,28 +5,34 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rock-Paper-Scissors</title>
-    
+        <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
         </head>
     <body>
-        <div>First to 5</div>
-        <br>
-        <br>
-        <br>
-        <div class="btn-div">
-            <button class="btn-rock">Rock</button>
-            <button class="btn-paper">Paper</button>
-            <button class="btn-scissors">Scissors</button>
+    <header class="header">
+        <div class="title">ROCK PAPER SCISSORS</div>
+        <div class="num-games">First to 5</div>
+    </header>
+    <div class="main-container">
+        <div class="results-container">
+            <div class="results" id="results">Play-by-Play!</div>
         </div>
-        <br>
-        <br>
-        <br>
-        <div class="results" id="results">Play-by-Play!</div>
-        <br>
-        <br>
-        <br>
-        <div class="score" id="score">Score!</div>
-        <div class="winner"></div>
-
+       
+        <div class="score-container">
+            <div class="score" id="score">Score!</div>
+        </div>
+    </div>
+    
+    <div class="second-container">
+        <div class="winner-container">
+            <div class="winner"></div>
+        </div>
+    
+        <div class="btn-container">
+            <button class="btn btn-rock">Rock</button>
+            <button class="btn btn-paper">Paper</button>
+            <button class="btn btn-scissors">Scissors</button>
+        </div>
+    </div>
     </body>
     </html>
