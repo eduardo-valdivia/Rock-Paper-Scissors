@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower');
+
+body {
+    margin: 0;
+    background: #34E5FF;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    gap: 50px;
+   
+}
+
+.title {
+    font-weight: bold;
+    font-size: 3em;
+    font-family: "Indie Flower";
+    color: #35281D;
+}
+
+.num-games{
+    font-weight: 750;
+    font-size: 2em;
+    font-family: "Indie Flower";
+    color: #35281D;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+    text-align: center;
+}
+
+.results-container {
+    color: #35281D;
+    font-family: "Indie Flower";
+    font-size: 2em;
+    font-weight: 550;
+}
+
+.score-container {
+    color: #35281D;
+    font-family: "Indie Flower";
+    font-size: 2em;
+    font-weight: 550;
+}
+
+.second-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.winner-container {
+    color: #35281D;
+    font-family: "Indie Flower";
+    font-size: 4em;
+    font-weight: 750;
+}
+
+.btn {
+    background-color: #B74F6f;
+    color: white;
+    font-size: 16px;
+    padding: 14px 40px;
+    border-radius: 4px;
+}
+
+.btn-rock:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.btn-paper:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.btn-scissors:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
