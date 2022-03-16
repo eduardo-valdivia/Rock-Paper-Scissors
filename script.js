@@ -113,6 +113,10 @@ function winCondition() { //function that gets called once computer or player re
     const winner = document.querySelector('.winner');
     const displayWinner = document.createElement('div');
     displayWinner.classList.add('displayWinner');
+    let y = document.getElementById('score');
+    score.innerHTML = '';
+    let x = document.getElementById('results');
+    results.innerHTML = '';
     
     if (playerScore >= 5){
         displayWinner.textContent = 'Player Wins!'
